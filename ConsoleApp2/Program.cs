@@ -1,474 +1,428 @@
-﻿//
-// struct Point
-// {
-//     public int x { get; set; }
-//     public int y { get; set; }
+﻿//  //exercise 1 A
+//  const short size = 5;
+//  int[] arr = new int[size];
 //
-//     public Point(int x, int y)
-//     {
-//         this.x = x;
-//         this.y = y;
-//     }
+//  int user_numbers = default;
 //
-//     public override string ToString()
-//     {
-//         return $"({x},{y})";
-//     }
-// }
+//  for (int i = 0; i < size; i++)
+//  {
+//      Console.Write("Enter a number: ");
+//      user_numbers = int.Parse(Console.ReadLine());
+//      arr[i] = user_numbers;
+//  }
 //
-
-
-// //exercise 1
-// ArticleType type = default;
+//  Console.WriteLine("1-SHOW\n2-SUM\n3-AVERAGE\n4-MIN\n5-MAX\n6-EVEN_ODD\n7-EXIT\n");
 //
-// Console.WriteLine("1.FOOD\n2.ELECTRONICS\n3.CLOTHERS ");
-// Console.Write("Which type you: ");
-// while (true)
-// {
-//     int value = int.Parse(Console.ReadLine());
-//
-//     if (value == (int)ArticleType.Food || value == (int)ArticleType.Electronics || value == (int)ArticleType.Clothing)
-//     {
-//         type = (ArticleType)value;
-//         break;
-//     }
-//
-//     Console.WriteLine("invalid input");
-// }
-//
-// Article article = new Article();
-// Console.Write("Title: ");
-// article.Title = Console.ReadLine();
-// Console.Write("Code: ");
-// article.Code = int.Parse(Console.ReadLine());
-// Console.Write("Price: ");
-// article.Price = int.Parse(Console.ReadLine());
-//
-// Console.WriteLine(article.ToString());
-// Console.WriteLine("Article Type: " + type.ToString());
-//
-// struct Article
-// {
-//     private string title;
-//     private int code;
-//     private int price;
-//     
-//     public string Title { get => title; set => title = value; }
-//     
-//     public int Code { get => code; set => code = value; }
-//
-//     public Article(string title, int code, int price)
-//     {
-//         this.title = title;
-//         this.code = code;
-//         this.price = price;
-//     }
-//     
-//     public int Price
-//     {
-//         get => price;
-//         set
-//         {
-//             if (value > 0) price = value;
-//         }
-//     }
-//
-//     public override string ToString()
-//     {
-//         return  $"Title: {title}, Price: {price}, Code: {code}";
-//     }
-// }
-//
-// enum ArticleType
-// {
-//     Food = 1,
-//     Electronics,
-//     Clothing
-// }
-
-// exercise 2
-//
-// Client client = new Client();
-//
-// Console.WriteLine("1.NORMAL\n2.VIP");
-//
-// Console.Write("Who are you: ");
-//
-// ClientType who = default;
-//
-// while (true)
-// {
-//     int value = int.Parse(Console.ReadLine());
-//
-//     if (value == (int)ClientType.NORMAL || value == (int)ClientType.VIP)
-//     {
-//         who = (ClientType)value;
-//         break;
-//     }
-//
-//     Console.WriteLine("Invalid client type");
-// }
-//
-// Console.Write("Please enter your name: ");
-// client.Name = Console.ReadLine();
-//
-// Console.Write("Please enter your surname: ");
-// client.Surname = Console.ReadLine();
-//
-// Console.Write("Please enter your address: ");
-// client.Address = Console.ReadLine();
-//
-// Console.Write("Please enter your phone number: ");
-// client.Number_Phone = int.Parse(Console.ReadLine());
-//
-// Console.Write("Please enter your order counts: ");
-// client.Order_Counts = int.Parse(Console.ReadLine());
-//
-// Console.Write("Please enter your orders sum: ");
-// client.Orders_Sum = int.Parse(Console.ReadLine());
-//
-// Console.WriteLine(client.ToString());
-// Console.WriteLine("For "+who.ToString());
-// struct Client
-// {
-//     private string name;
-//     private string surname;
-//     private string address;
-//     private int number_phone;
-//     private int order_counts;
-//     private int orders_sum;
-//     
-//     public string Name { get => name; set => name = value; }
-//     public string Surname { get => surname; set => surname = value; }
-//     public string Address { get => address; set => address = value; }
-//
-//     public Client(string name, string surname, string address, int number_phone, int order_counts, int orders_sum)
-//     {
-//         this.name = name;
-//         this.surname = surname;
-//         this.address = address;
-//         this.number_phone = number_phone;
-//         this.order_counts = order_counts;
-//         this.orders_sum = orders_sum;   
-//     }
-//     
-//     public int Number_Phone
-//     {
-//         get => number_phone;
-//         set
-//         {
-//             if(value > 0) number_phone = value;
-//         }
-//     }
-//
-//     public int Order_Counts
-//     {
-//         get => order_counts;
-//         set
-//         {
-//             if(value > 0) order_counts = value;
-//
-//         }
-//     }
-//
-//     public int Orders_Sum
-//     {
-//         get => orders_sum;
-//         set
-//         {
-//             if(value > 0) orders_sum = value;
-//         }
-//     }
-//
-//     public override string ToString()
-//     {
-//         return $"Name : {Name}\n Surname : {Surname}\n Address : {Address}\n Number phone : {Number_Phone}\n Order counts : {Order_Counts}\n Order sum : {Orders_Sum}  ";
-//     }
-// }
-//
-// enum ClientType
-// {
-//     NORMAL = 1,
-//     VIP
-// }
-
-// exercise 3
-// RequestItem req = new RequestItem();
-//
-// Console.Write("Enter the goods:");
-// req.Goods = Console.ReadLine();
-// Console.Write("Enter the goods_count:");
-// req.Goods_count = int.Parse(Console.ReadLine());
-//
-// Console.WriteLine(req.ToString());
+//  short choice = default;
 //
 //
-// struct RequestItem
-// {
-//     private string goods;
-//     private int goods_count;
-//     
-//     public  RequestItem(string goods, int goods_count)
-//     {
-//         this.goods = goods;
-//         this.goods_count = goods_count;
-//     }
-//     
-//     public string Goods { get => goods; set => goods = value; }
+//  while (true)
+//  {
+//      
+//      Console.Write("Choose an option:");
+//      choice = short.Parse(Console.ReadLine());
+//      switch (choice)
+//      {
+//          case (short)Menu_choice.SHOW:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  Console.Write(arr[i] + " ");
+//              }
 //
-//     public int Goods_count
-//     {
-//         get => goods_count;
-//         set
-//         {
-//             if(value > 0) goods_count = value;
-//         }
-//     }
+//              break;
+//          case (short)Menu_choice.SUM:
+//              int sum = default;
 //
-//     public override string ToString()
-//     {
-//         return $"{Goods}-{Goods_count}";
-//     }
-// }
-
-// exercise 4
-
-// Request request = new Request();
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  sum += arr[i];
+//              }
 //
-// PayType payType = default;
+//              Console.WriteLine(sum);
 //
-// int value = default;
+//              break;
+//          case (short)Menu_choice.AVERAGE:
+//              double average = default;
 //
-// Console.WriteLine("1.CASH\n2.CARD");
-// while (true)
-// {
-//     Console.Write("Your choice:");
-//     value = int.Parse(Console.ReadLine());
-//     if (value == (int)PayType.CARD || value == (int)PayType.CASH ) 
-//     {
-//         payType = (PayType)value;
-//         break;
-//     }
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  average += arr[i];
+//              }
+//              
+//              average /= arr.Length;
 //
-//     Console.WriteLine("invalid input");
-// }
+//              Console.WriteLine(average);
+//              break;
+//          case (short)Menu_choice.MIN:
 //
-// Console.Write("Enter the code of products you want to buy: ");
-// request.Code_order = int.Parse(Console.ReadLine());
-// Console.Write("Enter the username: ");
-// request.Username = Console.ReadLine();
-// Console.Write("Enter the day: ");
-// request.Day = int.Parse(Console.ReadLine());
-// Console.Write("Enter the month: ");
-// request.Month = int.Parse(Console.ReadLine());
-// Console.Write("Enter the year: ");
-// request.Year = int.Parse(Console.ReadLine());
-// Console.Write("Enter the product counts: ");
-// int count = default;
+//              int min = default;
 //
-// while (true)
-// {
-//     count = int.Parse(Console.ReadLine());
-//     if(count > 0) break;
-//     
-//     Console.WriteLine("invalid input");
-// }
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] < min)
+//                  {
+//                      min = arr[i];
+//                  }
+//              }
 //
-// request.Products = new string[count];
+//              Console.WriteLine(min);
+//              break;
 //
-// for (int i = 0; i < count; i++)
-// {
-//     Console.Write("Enter product name: ");
-//     request.Products[i] = Console.ReadLine();
-// }
+//          case (short)Menu_choice.MAX:
+//              int max = default;
 //
-// Console.Write("Enter the sum products: ");
-// request.Sum_products = int.Parse(Console.ReadLine());
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] > max)
+//                  {
+//                      max = arr[i];
+//                  }
+//              }
 //
-// Console.WriteLine(request.ToString());
-// Console.WriteLine("Type of payment:"+payType.ToString());
+//              Console.WriteLine(max);
+//              break;
+//          case (short)Menu_choice.EVEN_AND_ODD:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] % 2 == 0)
+//                  {
+//                      Console.WriteLine("Even:" + arr[i]);
+//                  }
+//                  else
+//                  {
+//                      Console.WriteLine("Odd:" + arr[i]);
+//                  }
+//              }
 //
-// struct Request
-// {
-//     private int code_order;
-//     private string username;
-//     private int day;
-//     private int month;
-//     private int year;
-//     private string[] products;
-//     private int sum_products;
+//              break;
 //
-//     public Request(int code_order, string username, int day, int month, int year, string[] products)
-//     {
-//         this.code_order = code_order;
-//         this.username = username;
-//         this.day = day;
-//         this.month = month;
-//         this.year = year;
-//         this.products = products;
-//         this.sum_products = 0;
-//     }
+//          case (short)Menu_choice.EXIT:
+//              return;
 //
-//     public int Code_order
-//     {
-//         get => code_order;
-//         set
-//         {
-//             if(value > 0) code_order = value;
-//         }
-//     }
+//          default:
+//              Console.WriteLine("Invalid choice");
+//              break;
+//      }
+//  }
 //
-//     public string Username
-//     {
-//         get => username;
-//         set
-//         {
-//             if(value.Length > 0) username = value;
-//         }
-//     }
+//  enum Menu_choice
+//  {
+//      SHOW = 1,
+//      SUM,
+//      AVERAGE,
+//      MIN,
+//      MAX,
+//      EVEN_AND_ODD,
+//      EXIT
+//  }
 //
-//     public int Day
-//     {
-//         get => day;
-//         set
-//         {
-//             if(value > 0) day = value;
-//         }
-//     }
+// exercise 1 B
 //
-//     public int Month
-//     {
-//         get => month;
-//         set
-//         {
-//             if(value > 0) month = value;
-//         }
-//     }
+//  const short size = 5;
+//  int[] arr = new int[size];
 //
-//     public int Year
-//     {
-//         get => year;
-//         set
-//         {
-//             if(value > 0) year = value;
-//         }
-//     }
+//  int user_numbers = default;
 //
-//     public string[] Products
-//     {
-//         get => products;
-//         set
-//         {
-//             if(value.Length > 0) products = value;
-//         }
-//     }
-//     
-//     public int Sum_products
-//     {
-//         get => sum_products;
-//         set
-//         {
-//             if(value > 0) sum_products = value;
-//         }
-//     }
+//  for (int i = 0; i < size; i++)
+//  {
+//      user_numbers = int.Parse(Console.ReadLine());
+//      arr[i] = user_numbers;
+//  }
 //
-//     public override string ToString()
-//     {
-//         return $"Code : {Code_order}, Username : {Username}, DateTime : {Day}-{Month}-{Year},  Products :{string.Join(", ", Products)}, Sum Products : {Sum_products}";
-//     }
-// }
+//  Console.WriteLine("1-SHOW\n2-SUM\n3-AVERAGE\n4-MIN\n5-MAX\n6-EVEN_ODD\n7-EXIT\n");
 //
-// enum PayType
-// {
-//     CASH = 1,
-//     CARD
-// }
-
-// exercise 5
-
-Student student = new Student();
-student.Name = Console.ReadLine();
-student.Surname = Console.ReadLine();
-student.Patronymic = Console.ReadLine();
-student.Group = int.Parse(Console.ReadLine());
-student.Age = int.Parse(Console.ReadLine());
-
-struct Student
-{
-    private string name;
-    private string surname;
-    private string patronymic;
-    private int group;
-    private int age;
-    private int[][] grade;
-
-    public Student(string name, string surname, string patronymic, int group, int age, int[][] grade)
-    {
-        this.name = name;
-        this.surname = surname;
-        this.patronymic = patronymic;
-        this.group = group;
-        this.age = age;
-        this.grade = grade;
-    }
-    
-    public string Name
-    {
-        get => name;
-        set
-        {
-            if(value.Length > 0) name = value;
-        }
-    }
-
-    public string Surname
-    {
-        get => surname;
-        set
-        {
-            if(value.Length > 0) surname = value;
-        }
-    }
-
-    public string Patronymic
-    {
-        get => patronymic;
-        set
-        {
-            if(value.Length > 0) patronymic = value;
-        }
-    }
-
-    public int Group
-    {
-        get => group;
-        set
-        {
-            if(value > 0) group = value;
-        }
-    }
-
-    public int Age
-    {
-        get => age;
-        set
-        {
-            if(value > 0) age = value;
-        }
-    }
-
-    public int[][] Grade
-    {
-        get => grade;
-        set
-        {
-            grade = value;
-        }
-    }
-
-    public int getGrade(int value)
-    {
-        
-    }
-
-}
+//  short choice = default;
+//
+//
+//  while (true)
+//  {
+//      
+//      Console.Write("Choose an option:");
+//      choice = short.Parse(Console.ReadLine());
+//      switch (choice)
+//      {
+//          case (short)Menu_choice.SHOW:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  Console.Write(arr[i] + " ");
+//              }
+//
+//              break;
+//          case (short)Menu_choice.SUM:
+//              int sum = arr.Sum();
+//              Console.WriteLine(sum);
+//              
+//              break;
+//          case (short)Menu_choice.AVERAGE:
+//              double average = arr.Average();
+//
+//              Console.WriteLine(average);
+//              break;
+//          case (short)Menu_choice.MIN:
+//
+//              int min = arr.Min();
+//
+//              Console.WriteLine(min);
+//              break;
+//
+//          case (short)Menu_choice.MAX:
+//              int max = arr.Max();
+//              
+//              Console.WriteLine(max);
+//              break;
+//          case (short)Menu_choice.EVEN_AND_ODD:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] % 2 == 0)
+//                  {
+//                      Console.WriteLine("Even:" + arr[i]);
+//                  }
+//                  else
+//                  {
+//                      Console.WriteLine("Odd:" + arr[i]);
+//                  }
+//              }
+//
+//              break;
+//
+//          case (short)Menu_choice.EXIT:
+//              return;
+//
+//          default:
+//              Console.WriteLine("Invalid choice");
+//              break;
+//      }
+//  }
+//
+//  enum Menu_choice
+//  {
+//      SHOW = 1,
+//      SUM,
+//      AVERAGE,
+//      MIN,
+//      MAX,
+//      EVEN_AND_ODD,
+//      EXIT
+//  }
+//
+// //exercise 2 A
+//
+//  int[] arr = {1488,228,52,67,666,777,-67,-52,-1488,-666,-42-9,300,0,0,0};
+//
+//  bool @true = true;
+//  while (@true)
+//  {
+//      short choice = default;
+//      choice = short.Parse(Console.ReadLine());
+//      switch (choice)
+//      {
+//          case (short)Menu_choice.SHOW:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  Console.Write(arr[i] + " ");
+//              }
+//              
+//              Console.WriteLine();
+//              break;
+//          
+//          case (short)Menu_choice.CLAMPTOZERO:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] < 0)
+//                  {
+//                      arr[i] = 0;
+//                  }
+//              }
+//              
+//              Console.WriteLine();
+//              
+//              break;
+//          
+//          case (short)Menu_choice.COUNTER:
+//              ushort pos_count = default;
+//              ushort neg_count = default;
+//              ushort zero_count = default;
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] == 0)
+//                  {
+//                      zero_count++;
+//                  }
+//                  
+//                  else if (arr[i] > 0)
+//                  {
+//                      pos_count++;
+//                  }
+//                  
+//                  else neg_count++;
+//              }
+//              
+//              Console.WriteLine();
+//
+//              break;
+//              
+//          case (short)Menu_choice.MAX_INDEX:
+//              int max = default;
+//              short max_index = 0;
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] > max)
+//                  {
+//                      max = arr[i];
+//                      max_index++;
+//                  }
+//              }
+//              
+//              Console.WriteLine("Max number: " + max," index:" + max_index );
+//              
+//              Console.WriteLine();
+//              
+//              break;
+//          
+//          case (short)Menu_choice.EXIT:
+//              @true = false;
+//              break;
+//          
+//          default:
+//              Console.WriteLine("invalid input");
+//              break;
+//      }
+//  }
+//
+//  for (int i = 0; i < arr.Length; i++)
+//  {
+//      Console.WriteLine(arr[i]+" ");
+//  }
+//
+//
+//  enum Menu_choice
+//  {
+//      SHOW=1,
+//      CLAMPTOZERO,
+//      COUNTER,
+//      MAX_INDEX,
+//      EXIT
+//  }
+//
+// // exercise 2 B
+//
+//  int[] arr = {1488,228,52,67,666,777,-67,-52,-1488,-666,-42-9,300,0,0,0};
+//  for (int i = 0; i < arr.Length; i++)
+//  {
+//      Console.Write(arr[i] + " ");
+//  }
+//  bool @true = true;
+//  while (@true)
+//  {
+//      short choice = default;
+//      choice = short.Parse(Console.ReadLine());
+//      switch (choice)
+//      {
+//          case (short)Menu_choice.SHOW:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  Console.Write(arr[i] + " ");
+//              }
+//              
+//              Console.WriteLine();
+//              break;
+//          
+//          case (short)Menu_choice.CLAMPTOZERO:
+//              for (int i = 0; i < arr.Length; i++)
+//              {
+//                  if (arr[i] < 0)
+//                  {
+//                      arr[i] = 0;
+//                  }
+//              }
+//              
+//              Console.WriteLine();
+//              
+//              break;
+//          
+//          case (short)Menu_choice.COUNTER:
+//              int pos_count = arr.Count(x=>x>0);
+//              int neg_count = arr.Count(y=>y<0);
+//              int zero_count = arr.Count(z=>z==0);
+//              
+//              Console.WriteLine("Positive"+pos_count+"\nNegative"+neg_count+"\nZero"+zero_count);
+//              
+//              Console.WriteLine();
+//
+//              break;
+//              
+//          case (short)Menu_choice.MAX_INDEX:
+//              int index = Array.IndexOf(arr, arr.Max());
+//
+//              Console.WriteLine(index);
+//              
+//              break;
+//          
+//          case (short)Menu_choice.EXIT:
+//              @true = false;
+//              break;
+//          
+//          default:
+//              Console.WriteLine("invalid input");
+//              break;
+//      }
+//  }
+//
+//  enum Menu_choice
+//  {
+//      SHOW=1,
+//      CLAMPTOZERO,
+//      COUNTER,
+//      MAX_INDEX,
+//      EXIT
+//  }
+//
+// // exercise 3 A
+//
+//  int[] arr = {1488,52,67,300};
+//  int first_el = arr[0];
+//  int[] arr2 = new int[arr.Length];
+//  int j = 0;
+//  for(int i = arr.Length-1; i >= 0; i--)
+//  { 
+//      arr2[j] = arr[i];
+//      j++;
+//  }
+//
+//  Console.WriteLine();
+//  arr = arr2;
+//
+//  int second_el = arr[0];
+//
+//  for (int i = 0; i < arr2.Length; i++)
+//  {
+//      Console.Write(arr[i]);
+//  }
+//
+//  Console.WriteLine();
+//
+//  if (first_el == second_el)
+//  {
+//      Console.WriteLine("no change");
+//  }
+//  else Console.WriteLine("change");
+//
+// // exercise 3 B
+//
+//  int[] arr = {1488,52,67,300};
+//  int first_el = arr[0];
+//  Array.Reverse(arr);
+//  int second_el = arr[0];
+//
+//  for (int i = 0; i < arr.Length; i++)
+//  {
+//      Console.Write(arr[i]);
+//  }
+//
+//  Console.WriteLine();
+//
+//  if (first_el == second_el)
+//  {
+//      Console.WriteLine("no change");
+//  }
+//  else Console.WriteLine("change");
